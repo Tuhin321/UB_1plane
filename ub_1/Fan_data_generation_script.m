@@ -76,6 +76,8 @@ toc
 
 metadata= [repelem(labels_1p(:,1),size(omega_range,2)),repelem(labels_1p(:,2), size(omega_range,2)), (repmat(omega_range, 1, size(labels_1p,1)))',cat(2,features_matrix{:,:})'];
 % end
+writematrix(metadata,'Dataset.csv') 
+
 return
 
 % % %% use plots for later 
