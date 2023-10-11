@@ -78,8 +78,9 @@ metadata= [repelem(labels_1p(:,1),size(omega_range,2)),repelem(labels_1p(:,2), s
 % end
 
 % T= table (metadata(:1),metadata(:2), metadata(:end))
+metadata=metadata(randperm(size(metadata, 1)), :);
 
-writematrix(metadata,'Dataset.xlsx') 
+writematrix(metadata,'Dataset_v1_1.csv') 
 
 return
 
