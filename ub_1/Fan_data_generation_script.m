@@ -27,7 +27,7 @@ addpath func
 
 
 %% Provide inputs for indata
-omega_range=0:20:3000*2*pi/60;  % sped range
+omega_range=0:20:30000*2*pi/60;  % sped range
 
 % for ub magnitude: generate 1000 labels
 a = 0;
@@ -80,8 +80,15 @@ metadata= [repelem(labels_1p(:,1),size(omega_range,2)),repelem(labels_1p(:,2), s
 % T= table (metadata(:1),metadata(:2), metadata(:end))
 metadata=metadata(randperm(size(metadata, 1)), :);
 
-writematrix(metadata,'Dataset_v1_2_G0.csv') 
-save ('dataset_100_G0', 'metadata', '-mat')
+zp=max(metadata);
+
+for i=1:size(metadata,1)
+    metadata(i,:)=metadata(i,:)./zp;
+end
+
+
+writematrix(metadata,'Dataset_v1_3.csv') 
+% save ('dataset_100_G0', 'metadata', '-mat')
 return
 
 % % %% use plots for later 
