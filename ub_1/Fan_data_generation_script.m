@@ -27,7 +27,7 @@ addpath func
 
 
 %% Provide inputs for indata
-omega_range=0:20:30000*2*pi/60;  % sped range
+omega_range=0:20:3000*2*pi/60;  % sped range
 
 % for ub magnitude: generate 1000 labels
 a = 0;
