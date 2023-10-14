@@ -82,12 +82,12 @@ metadata=metadata(randperm(size(metadata, 1)), :);
 
 zp=max(metadata);
 
-for i=1:size(metadata,1)
-    metadata(i,:)=metadata(i,:)./zp;
-end
+% for i=1:size(metadata,1)
+%     metadata(i,:)=metadata(i,:)./zp;
+% end
 
 
-writematrix(metadata,'Dataset_v1_3.csv') 
+writematrix(metadata,'Dataset_v1_4r.csv') 
 % save ('dataset_100_G0', 'metadata', '-mat')
 return
 

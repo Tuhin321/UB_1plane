@@ -43,8 +43,8 @@ if strcmp(Request.UnbalanceResponse,'Yes')
     [Probe1_amp, Probe1_phase, probe2_amp, probe2_phase]=f_UBResponse(Inp,Request);   
 end
 
-Features_matrix=[Probe1_amp; Probe1_phase; probe2_amp; probe2_phase];
-
+% Features_matrix=[Probe1_amp; Probe1_phase; probe2_amp; probe2_phase];
+Features_matrix=[Probe1_amp;  probe2_amp];
 end
 
 
