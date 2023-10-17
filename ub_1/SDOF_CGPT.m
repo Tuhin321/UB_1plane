@@ -1,3 +1,6 @@
+clear all
+clc
+
 %% Example System Parameters
 mass = 1.0;        % Mass of the rotor (kg)
 stiffness = 100.0; % Stiffness of the bearings (N/m)
@@ -14,6 +17,10 @@ velocities = velocity_amplitude * cos(2 * pi * time);      % Cosine velocity
 
 % Calculate forces based on the equation of motion for SDOF system
 forces = -(stiffness * displacements + damping * velocities) + external_force;
+
+% Generate training data
+X_train = [displacements; velocities]; % Input features (displacements and velocities)
+Y_train = forces; % Output labels (forces)
 
 %% NEURAL NETWORK
 % Define the percentage for validation data (e.g., 20%)
@@ -50,7 +57,7 @@ options = trainingOptions('adam', ...
     'MiniBatchSize', 16); % Adjust mini-batch size as needed
 
 % Train the model
-[model1, ~] = train(model, X_train, Y_train, [], [], options); % Use transposed data
+[model1, ~] = train(model, X_train, Y_train); % Use transposed data
 
 
 % Simulate the system response for a new input

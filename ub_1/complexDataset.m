@@ -9,5 +9,7 @@ complexUB(:,2)= metadata(:,4)+1i*metadata(:,5);
 complexUB(:,3)= metadata(:,6)+1i*metadata(:,7);
 complexUB(:,4)= metadata(:,12)+1i*metadata(:,13);
 complexUB(:,5)= metadata(:,14)+1i*metadata(:,15);
+realonly=real(complexUB);
 
-writematrix(complexUB,'DatasetComp_v2_2.csv') 
+% writematrix(complexUB,'Datasetreal_v2_2.csv') 
+writematrix(realonly,'Datasetreal_v2_3.csv') 
