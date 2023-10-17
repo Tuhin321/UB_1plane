@@ -123,7 +123,7 @@ for i=1:length(Request.UBResp.Spin_vec)
     Spin=Request.UBResp.Spin_vec(i);
 
     % Gyromatriisi kerrotaan pyörimisnopeudella
-    Gc=Spin*Matrx.Gc.*0;
+    Gc=Spin*Matrx.Gc;
 
     % Steady State tila Lalanne s. 102 kaikilla vapausasteilla
     AA=[Kc-Matrx.Mc*Spin^2     -Spin*(Cc+Gc)
